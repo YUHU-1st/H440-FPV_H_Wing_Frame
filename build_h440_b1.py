@@ -6,6 +6,10 @@ from pathlib import Path
 R=Path(__file__).parent;sys.path.insert(0,str(R/'.cad-deps'))
 import cadquery as cq
 O=R/'H440_B1';O.mkdir(exist_ok=True)
+# Remove outputs retired by the B1 O4 Pro camera-mount revision so a regeneration
+# cannot leave two different camera cradles looking simultaneously current.
+for obsolete in ('P06_camera_cradle.step','P06_camera_cradle_print.stl','P06_camera_cradle.SLDPRT'):
+    (O/obsolete).unlink(missing_ok=True)
 def box(a,b,c,x=0,y=0,z=0):return cq.Workplane('XY').box(a,b,c).translate((x,y,z))
 def cx(r,h,x,y,z):return cq.Workplane('YZ',origin=(x,y,z)).circle(r).extrude(h)
 def cy(r,h,x,y,z):return cq.Workplane('XZ',origin=(x,y,z)).circle(r).extrude(h)
@@ -60,6 +64,12 @@ for x in [-20,20]:
 for x in [-23,23]:
     for z in [-27,-81]:deck=deck.cut(cy(1.7,6,x,-15,z))
 for x in [-10,10]:deck=deck.cut(cy(1.7,6,x,-15,11))
+# Dedicated O4 Pro camera-side brackets. Keep the legacy x=+/-10 interface for
+# the generic camera cradle and optional gimbal, and add four M3 bracket holes.
+for x in [-18,18]:
+    for z in [2,14]:deck=deck.cut(cy(1.7,6,x,-15,z))
+# Central downward-view window; side strips retain the four bracket fasteners.
+deck=deck.cut(box(24,4,25,0,-19,7.5))
 for x in [-22,22]:deck=deck.cut(cy(3.2,6,x,-15,-122))
 deck=reg('C04_electronics_floor_2mm',deck,'CFRP',description='开放飞塔/图传托板，2mm',axis='Y')
 add('Electronics_floor',deck,'CFRP')
@@ -156,16 +166,53 @@ wo=wing.intersect(box(73.3,50,160,183.35,0,-75))
 for n,s,d in [('W01_inner_R',wi,'右翼内段'),('W02_outer_R',wo,'右翼外段'),('W03_inner_L',wi.mirror('YZ'),'左翼内段'),('W04_outer_L',wo.mirror('YZ'),'左翼外段')]:
     s=reg(n,s,'PLA',description=d+'，0.6mm标称皮+管套/0.8mm肋',axis='X');add(n,s,'PLA')
 
-# Reuse already checked camera and VTX interfaces, shifted to revised electronics floor.
+# DJI O4 Pro camera: published body 25.55 deep x 20 wide x 23.30 high.
+# Project axes are X span, Y up, Z forward, so the envelope is X=20, Y=23.3, Z=25.55.
+# Side mount uses the two M2 positions 16mm apart: rear position pivots, front position
+# follows an R16 0-90deg slot. Camera is raised enough to clear the electronics deck
+# through the entire sweep, including the lower mid-angle corner of the body envelope.
+CAM_W,CAM_H,CAM_D=20.0,23.3,25.55
+CAM_CLEAR=20.4
+CAM_CENTER_Y,CAM_CENTER_Z=6.0,13.0
+CAM_PIVOT_Y=CAM_CENTER_Y-CAM_H/2+16.0
+CAM_PIVOT_Z=CAM_CENTER_Z-8.0
+CAM_HOLE_PITCH=16.0
+CAM_SLOT_W=2.6
+CAM_SIDE_X=CAM_CLEAR/2+1.5
+# Keep the side wall entirely forward of the battery-floor front edge (Z=-1).
+# The M2 sweep only needs Z>=5, so Z=0..30 retains the camera support while
+# preserving the full forward battery-trim envelope.
+camwall=box(3,40,30,CAM_SIDE_X,2,15)
+camfoot=box(12,3,24,16.2,-16.5,8)
+camR=camwall.union(camfoot).cut(cx(1.2,6,CAM_SIDE_X-3,CAM_PIVOT_Y,CAM_PIVOT_Z))
+plcam=cq.Plane(origin=(CAM_SIDE_X-3,0,0),xDir=(0,0,1),normal=(1,0,0))
+u0,v0=CAM_PIVOT_Z,-CAM_PIVOT_Y
+ro,ri=CAM_HOLE_PITCH+CAM_SLOT_W/2,CAM_HOLE_PITCH-CAM_SLOT_W/2
+s2=math.sqrt(2)
+camslot=(cq.Workplane(plcam).moveTo(u0+ro,v0)
+    .threePointArc((u0+ro/s2,v0+ro/s2),(u0,v0+ro))
+    .lineTo(u0,v0+ri)
+    .threePointArc((u0+ri/s2,v0+ri/s2),(u0+ri,v0))
+    .close().extrude(6))
+for yy,zz in [(CAM_PIVOT_Y,CAM_PIVOT_Z+CAM_HOLE_PITCH),(CAM_PIVOT_Y-CAM_HOLE_PITCH,CAM_PIVOT_Z)]:
+    camslot=camslot.union(cx(CAM_SLOT_W/2,6,CAM_SIDE_X-3,yy,zz))
+camR=camR.cut(camslot)
+for z in [2,14]:camR=camR.cut(cy(1.7,8,18,-13,z))
+camR=reg('P06R_O4Pro_camera_side',camR,'ABS',description='O4 Pro右相机侧板，M2枢轴+0-90度弧形锁紧槽',axis='X')
+camL=reg('P06L_O4Pro_camera_side',camR.mirror('YZ'),'ABS',description='O4 Pro左相机侧板，M2枢轴+0-90度弧形锁紧槽',axis='X')
+add('O4Pro_camera_side_R',camR,'ABS');add('O4Pro_camera_side_L',camL,'ABS')
+
+# Reuse checked VTX interfaces and retain the old 26mm camera cradle as an optional
+# legacy mount for regular O4 / analog camera inserts.
 for n,old,shift,desc,opt in [
- ('P06_camera_cradle','10_camera_cradle_26clear',(0,9,0),'26mm通用相机座',False),
  ('P07_O4Pro_adapter','07_vtx_O4Pro_25p5_M2',(0,21,0),'O4 Pro25.5-M2适配板',False),
  ('P08_O4_adapter','08_vtx_O4_25p5_softmount',(0,21,0),'O4普通版软安装板',True),
  ('P09_analog_adapter','09_vtx_analog_20_M2',(0,21,0),'模拟20-M2安装板',True),
  ('P10_gimbal_dock','11_optional_servo_plate_23x12',(0,9,0),'单轴云台预留板，非整套云台',True),
  ('P11_O4_camera_insert','12_camera_insert_O4_14',(0,9,0),'14.4mm相机衬块',True),
  ('P12_analog_camera_insert','13_camera_insert_analog19',(0,9,0),'19.4mm相机衬块',True),
- ('P13_camera20_insert','14_camera_insert_20',(0,9,0),'20.4mm相机衬块',True)]:
+ ('P13_camera20_insert','14_camera_insert_20',(0,9,0),'20.4mm相机衬块',True),
+ ('P14_camera_cradle_legacy','10_camera_cradle_26clear',(0,9,0),'26mm通用相机座；O4普通版/模拟相机兼容替代件',True)]:
     s=cq.importers.importStep(str(R/'H440_A0'/(old+'.step'))).translate(shift)
     s=reg(n,s,'ABS',description=desc,axis='Y',optional=opt)
     if not opt:add(n,s,'ABS')
@@ -199,7 +246,7 @@ def ref(n,s,col):layout.add(s,name=n,color=cq.Color(*col));refs.append((n,s,col)
 ref('ASSUMED_BATTERY_78x48x52',box(48,52,78,0,47,-75),(.82,.71,.08))
 ref('FC_ESC_ENVELOPE',box(36,23,36,0,-36,-83),(.08,.35,.12))
 ref('O4PRO_ENVELOPE',box(33.5,13,33.5,0,-33,-33),(.24,.26,.29))
-ref('CAMERA_ENVELOPE',box(25.55,20,23.3,0,-1,13),(.1,.1,.1))
+ref('CAMERA_ENVELOPE',box(CAM_W,CAM_H,CAM_D,0,CAM_CENTER_Y,CAM_CENTER_Z),(.1,.1,.1))
 for x in [-145,145]:
     for y in [-78,78]:
         ref(f'MOTOR_{x}_{y}',cz(14,25,x,y,16),(.16,.16,.16))
@@ -218,6 +265,8 @@ for i,(a,sa,_) in enumerate(instances):
 materialmass={mat:sum(s.val().Volume()*rho[mat]/1000 for _,s,m in instances if m==mat) for mat in rho}
 report.update(material_mass_g={m:round(v,2) for m,v in materialmass.items()},CAD_frame_mass_g=round(sum(materialmass.values()),2))
 report['checks'].update(interferences_mm3=ints,wing_span_mm=440,prop_spacing_mm=[290,156],prop_gap_mm=29,battery_assumed_mm=[78,48,52],battery_floor_mm=[62,148],battery_travel_geometric_mm=70,battery_recommended_travel_mm=60,tube_lengths_mm=[420,420],outer_wing_gap_at_pylon_mm=3.4)
+# Camera sweep is also validated independently at 0.25deg increments during B1 delivery QA.
+report['checks'].update(O4Pro_camera_envelope_mm_xyz=[CAM_W,CAM_H,CAM_D],O4Pro_camera_clear_width_mm=CAM_CLEAR,O4Pro_camera_angle_range_deg=[0,90],O4Pro_camera_M2_pitch_mm=CAM_HOLE_PITCH,O4Pro_camera_slot_width_mm=CAM_SLOT_W)
 # Renderer source data, actual BREP geometry rather than conceptual artwork.
 manifest=[]
 for i,(n,s,mat) in enumerate(instances):

@@ -1,0 +1,495 @@
+{
+  "generated_at": "2026-09-11T00:27:45",
+  "solidworks_revision": "32.5.0",
+  "component_sldprt_count": 28,
+  "parts": [
+    {
+      "step": "C01_center_side_R_2mm.step",
+      "sldprt": "C01_center_side_R_2mm.SLDPRT",
+      "size_bytes": 105980,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "C02_center_side_L_2mm.step",
+      "sldprt": "C02_center_side_L_2mm.SLDPRT",
+      "size_bytes": 106815,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "C03_battery_floor_2mm.step",
+      "sldprt": "C03_battery_floor_2mm.SLDPRT",
+      "size_bytes": 85276,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "C04_electronics_floor_2mm.step",
+      "sldprt": "C04_electronics_floor_2mm.SLDPRT",
+      "size_bytes": 116105,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "C05_pylon_R_3mm.step",
+      "sldprt": "C05_pylon_R_3mm.SLDPRT",
+      "size_bytes": 122813,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "C06_pylon_L_3mm.step",
+      "sldprt": "C06_pylon_L_3mm.SLDPRT",
+      "size_bytes": 122221,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "C07_motor_plate_4mm.step",
+      "sldprt": "C07_motor_plate_4mm.SLDPRT",
+      "size_bytes": 88341,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P01_floor_angle.step",
+      "sldprt": "P01_floor_angle.SLDPRT",
+      "size_bytes": 62684,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P02_main_collar.step",
+      "sldprt": "P02_main_collar.SLDPRT",
+      "size_bytes": 81766,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P03_rear_collar.step",
+      "sldprt": "P03_rear_collar.SLDPRT",
+      "size_bytes": 79441,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P04_motor_clevis.step",
+      "sldprt": "P04_motor_clevis.SLDPRT",
+      "size_bytes": 131303,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P05_tail_shoe.step",
+      "sldprt": "P05_tail_shoe.SLDPRT",
+      "size_bytes": 55203,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P06L_O4Pro_camera_side.step",
+      "sldprt": "P06L_O4Pro_camera_side.SLDPRT",
+      "size_bytes": 69104,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P06R_O4Pro_camera_side.step",
+      "sldprt": "P06R_O4Pro_camera_side.SLDPRT",
+      "size_bytes": 72304,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P07_O4Pro_adapter.step",
+      "sldprt": "P07_O4Pro_adapter.SLDPRT",
+      "size_bytes": 76333,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P08_O4_adapter.step",
+      "sldprt": "P08_O4_adapter.SLDPRT",
+      "size_bytes": 77430,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P09_analog_adapter.step",
+      "sldprt": "P09_analog_adapter.SLDPRT",
+      "size_bytes": 77298,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P10_gimbal_dock.step",
+      "sldprt": "P10_gimbal_dock.SLDPRT",
+      "size_bytes": 67444,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P11_O4_camera_insert.step",
+      "sldprt": "P11_O4_camera_insert.SLDPRT",
+      "size_bytes": 58691,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P12_analog_camera_insert.step",
+      "sldprt": "P12_analog_camera_insert.SLDPRT",
+      "size_bytes": 58956,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P13_camera20_insert.step",
+      "sldprt": "P13_camera20_insert.SLDPRT",
+      "size_bytes": 58962,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "P14_camera_cradle_legacy.step",
+      "sldprt": "P14_camera_cradle_legacy.SLDPRT",
+      "size_bytes": 75933,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "T01_main_10x8_L420.step",
+      "sldprt": "T01_main_10x8_L420.SLDPRT",
+      "size_bytes": 59491,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "T02_rear_6x4_L420.step",
+      "sldprt": "T02_rear_6x4_L420.SLDPRT",
+      "size_bytes": 57920,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "W01_inner_R.step",
+      "sldprt": "W01_inner_R.SLDPRT",
+      "size_bytes": 676491,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "W02_outer_R.step",
+      "sldprt": "W02_outer_R.SLDPRT",
+      "size_bytes": 537798,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "W03_inner_L.step",
+      "sldprt": "W03_inner_L.SLDPRT",
+      "size_bytes": 666608,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    },
+    {
+      "step": "W04_outer_L.step",
+      "sldprt": "W04_outer_L.SLDPRT",
+      "size_bytes": 532669,
+      "import_errors": 0,
+      "save_result": 0,
+      "reopen_errors": 0,
+      "reopen_warnings": 0
+    }
+  ],
+  "assembly": {
+    "step": "H440_B1_FRAME.step",
+    "sldasm": "H440_B1_FRAME.SLDASM",
+    "size_bytes": 3908099,
+    "backup": "C:\\Users\\15877\\AppData\\Local\\Temp\\H440_B1_FRAME.pre_o4pro.SLDASM",
+    "import_errors": 0,
+    "save_result": 0,
+    "reopen_errors": 0,
+    "reopen_warnings": 0,
+    "component_count_including_root_wrapper": 44,
+    "generated_instance_count": 43,
+    "persistent_leaf_count": 43,
+    "persistent_root_subassembly": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\H440_B1_FRAME_IMPORTED.SLDASM",
+    "component_references": [
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\H440_B1_FRAME_IMPORTED.SLDASM",
+        "doc_type": 2
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P03_rear_collar_pylon_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P03_rear_collar_pylon_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Pylon_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Pylon_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Pylon_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Pylon_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_clevis_145_78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_clevis_145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_plate_-145_-78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_plate_-145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P03_rear_collar_center_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P03_rear_collar_center_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_plate_145_-78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_plate_145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_clevis_145_-78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_clevis_145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_plate_145_78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_plate_145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_plate_-145_78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_plate_-145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/W03_inner_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\W03_inner_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P03_rear_collar_pylon_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P03_rear_collar_pylon_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_clevis_-145_78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_clevis_-145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/O4Pro_camera_side_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\O4Pro_camera_side_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Motor_clevis_-145_-78-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Motor_clevis_-145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P07_O4Pro_adapter-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P07_O4Pro_adapter.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/W01_inner_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\W01_inner_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Shoe_-145_83-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Shoe_-145_83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/W02_outer_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\W02_outer_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Shoe_145_83-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Shoe_145_83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Shoe_145_-83-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Shoe_145_-83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Shoe_-145_-83-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Shoe_-145_-83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/W04_outer_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\W04_outer_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/O4Pro_camera_side_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\O4Pro_camera_side_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Electronics_floor-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Electronics_floor.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Battery_bracket_0_1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Battery_bracket_0_1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Central_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Central_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Central_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Central_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Battery_bracket_0_-1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Battery_bracket_0_-1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Battery_floor-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Battery_floor.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Electronics_bracket_0_1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Electronics_bracket_0_1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P02_main_collar_pylon_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P02_main_collar_pylon_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P02_main_collar_center_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P02_main_collar_center_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Battery_bracket_-54_1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Battery_bracket_-54_1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Electronics_bracket_-54_1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Electronics_bracket_-54_1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Battery_bracket_-54_-1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Battery_bracket_-54_-1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Electronics_bracket_-54_-1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Electronics_bracket_-54_-1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/T01_main_10x8_L420-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\T01_main_10x8_L420.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/T02_rear_6x4_L420-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\T02_rear_6x4_L420.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P02_main_collar_center_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P02_main_collar_center_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/Electronics_bracket_0_-1-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\Electronics_bracket_0_-1.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P02_main_collar_pylon_L-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P02_main_collar_pylon_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "H440_B1_FRAME_IMPORTED-1/P03_rear_collar_center_R-1",
+        "path": "E:\\H440-FPV_H_Wing_Frame-workspace\\H440_B1\\SolidWorks_Assembly_Parts\\P03_rear_collar_center_R.SLDPRT",
+        "doc_type": 1
+      }
+    ]
+  }
+}
