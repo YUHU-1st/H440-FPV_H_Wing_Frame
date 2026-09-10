@@ -1,0 +1,12 @@
+{
+  "fc_pitch": 25.5,
+  "motor_radius": 32.5,
+  "motor_pcd": 6.6,
+  "motor_hole": 1.5,
+  "wing_root": 20,
+  "wing_tip": 85,
+  "chord": 40,
+  "skin": 0.6,
+  "rib_width": 0.9,
+  "rib_height": 1.8
+}

@@ -1,0 +1,241 @@
+{
+  "status": "A0 FIT AND STRUCTURAL PROTOTYPE - NOT FLIGHT VALIDATED",
+  "axes": "X span,Y up,Z forward; mm",
+  "parts": {
+    "01_center_cradle": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        64.0,
+        174.5,
+        70.0
+      ],
+      "volume_mm3": 103278.28,
+      "PLA_solid_g": 128.07,
+      "valid": true,
+      "solids": 1
+    },
+    "02_wing_right": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        140.0,
+        16.8,
+        188.0
+      ],
+      "volume_mm3": 74515.43,
+      "PLA_solid_g": 92.4,
+      "valid": true,
+      "solids": 1
+    },
+    "03_wing_left": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        140.0,
+        16.8,
+        188.0
+      ],
+      "volume_mm3": 74515.43,
+      "PLA_solid_g": 92.4,
+      "valid": true,
+      "solids": 1
+    },
+    "04_pylon_upper": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        186.0,
+        90.34,
+        36.0
+      ],
+      "volume_mm3": 43654.96,
+      "PLA_solid_g": 54.13,
+      "valid": true,
+      "solids": 1
+    },
+    "05_pylon_lower": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        186.0,
+        90.34,
+        36.0
+      ],
+      "volume_mm3": 43654.96,
+      "PLA_solid_g": 54.13,
+      "valid": true,
+      "solids": 1
+    },
+    "04L_pylon_upper_left": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        186.0,
+        90.34,
+        36.0
+      ],
+      "volume_mm3": 43654.96,
+      "PLA_solid_g": 54.13,
+      "valid": true,
+      "solids": 1
+    },
+    "05L_pylon_lower_left": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        186.0,
+        90.34,
+        36.0
+      ],
+      "volume_mm3": 43654.96,
+      "PLA_solid_g": 54.13,
+      "valid": true,
+      "solids": 1
+    },
+    "06_electronics_deck": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        50.0,
+        118.0,
+        3.0
+      ],
+      "volume_mm3": 14006.13,
+      "PLA_solid_g": 17.37,
+      "valid": true,
+      "solids": 1
+    },
+    "07_vtx_O4Pro_25p5_M2": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        46.0,
+        40.0,
+        2.4
+      ],
+      "volume_mm3": 3511.35,
+      "PLA_solid_g": 4.35,
+      "valid": true,
+      "solids": 1
+    },
+    "08_vtx_O4_25p5_softmount": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        46.0,
+        40.0,
+        2.4
+      ],
+      "volume_mm3": 3492.13,
+      "PLA_solid_g": 4.33,
+      "valid": true,
+      "solids": 1
+    },
+    "09_vtx_analog_20_M2": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        46.0,
+        40.0,
+        2.4
+      ],
+      "volume_mm3": 3511.35,
+      "PLA_solid_g": 4.35,
+      "valid": true,
+      "solids": 1
+    },
+    "10_camera_cradle_26clear": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        34.0,
+        28.0,
+        29.0
+      ],
+      "volume_mm3": 8433.52,
+      "PLA_solid_g": 10.46,
+      "valid": true,
+      "solids": 1
+    },
+    "11_optional_servo_plate_23x12": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        44.0,
+        50.0,
+        4.0
+      ],
+      "volume_mm3": 7443.18,
+      "PLA_solid_g": 9.23,
+      "valid": true,
+      "solids": 1
+    },
+    "12_camera_insert_O4_14": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        25.8,
+        16.0,
+        12.0
+      ],
+      "volume_mm3": 2649.6,
+      "PLA_solid_g": 3.29,
+      "valid": true,
+      "solids": 1
+    },
+    "13_camera_insert_analog19": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        25.8,
+        16.0,
+        12.0
+      ],
+      "volume_mm3": 1849.6,
+      "PLA_solid_g": 2.29,
+      "valid": true,
+      "solids": 1
+    },
+    "14_camera_insert_20": {
+      "quantity": 1,
+      "print_bounds_mm": [
+        25.8,
+        16.0,
+        12.0
+      ],
+      "volume_mm3": 1689.6,
+      "PLA_solid_g": 2.1,
+      "valid": true,
+      "solids": 1
+    }
+  },
+  "checks": {
+    "wing_span_mm": 440,
+    "motor_spacing_mm": [
+      290,
+      156
+    ],
+    "prop_diameter_mm": 127,
+    "prop_min_tip_gap_mm": 29,
+    "frame_length_mm": 196,
+    "with_prop_length_mm": 216,
+    "battery_assumed_mm": [
+      78,
+      48,
+      52
+    ],
+    "battery_clear_width_mm": 54,
+    "battery_usable_length_mm": 148,
+    "battery_nominal_travel_mm": 70,
+    "wing_area_m2": 0.0616,
+    "material_note": "CAD solid volume; actual slicer toolpaths and inserts excluded",
+    "printed_part_interferences_mm3": [],
+    "STEP_roundtrip_valid": {
+      "01_center_cradle": true,
+      "02_wing_right": true,
+      "03_wing_left": true,
+      "04_pylon_upper": true,
+      "05_pylon_lower": true,
+      "04L_pylon_upper_left": true,
+      "05L_pylon_lower_left": true,
+      "06_electronics_deck": true,
+      "07_vtx_O4Pro_25p5_M2": true,
+      "08_vtx_O4_25p5_softmount": true,
+      "09_vtx_analog_20_M2": true,
+      "10_camera_cradle_26clear": true,
+      "11_optional_servo_plate_23x12": true,
+      "12_camera_insert_O4_14": true,
+      "13_camera_insert_analog19": true,
+      "14_camera_insert_20": true
+    },
+    "exposed_wing_area_m2": 0.05264,
+    "wing_area_note": "0.0616 reference rectangle includes central open bay; exposed lifting panels 0.05264"
+  },
+  "installed_PLA_solid_mass_g": 561.6
+}

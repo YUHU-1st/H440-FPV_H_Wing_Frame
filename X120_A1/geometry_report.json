@@ -1,0 +1,63 @@
+{
+  "parameters_mm": {
+    "fc_pitch": 25.5,
+    "motor_radius": 32.5,
+    "motor_pcd": 6.6,
+    "motor_hole": 1.5,
+    "wing_root": 20,
+    "wing_tip": 85,
+    "chord": 40,
+    "skin": 0.6,
+    "rib_width": 0.9,
+    "rib_height": 1.8
+  },
+  "parts": {
+    "hub": {
+      "quantity": 1,
+      "volume_mm3": 2116.344,
+      "PLA_g": 2.624,
+      "bounds_mm": [
+        56.562,
+        56.562,
+        7.8
+      ],
+      "solid_count": 1
+    },
+    "wing": {
+      "quantity": 4,
+      "volume_mm3": 2020.536,
+      "PLA_g": 2.505,
+      "bounds_mm": [
+        67.0,
+        48.8,
+        1.8
+      ],
+      "solid_count": 1
+    },
+    "battery_cage": {
+      "quantity": 1,
+      "volume_mm3": 802.32,
+      "PLA_g": 0.995,
+      "bounds_mm": [
+        17.7,
+        8.4,
+        35.8
+      ],
+      "solid_count": 1
+    }
+  },
+  "checks": {
+    "wing_hub_intersection_mm3": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "adjacent_prop_tip_gap_mm": 14.962,
+    "front_span_mm": 121.269,
+    "wing_area_cm2": 104,
+    "effective_small_angle_area_cm2": 52
+  },
+  "status": "FIT / STRUCTURAL PROTOTYPE - NOT FLIGHT VALIDATED",
+  "PLA_structure_g": 13.639
+}
