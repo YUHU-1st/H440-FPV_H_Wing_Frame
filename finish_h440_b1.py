@@ -9,7 +9,7 @@ hardware=[
  ('H01','M3×8钢螺钉：碳板到法兰套',16,.65),
  ('H02','M3×12钢螺钉：电机板16＋图传转接4',20,.9),
  ('H03','M3×20钢螺钉：电机U座夹侧板',8,1.2),
- ('H04','M3×10钢螺钉：8角码双轴＋相机2',18,.75),
+ ('H04','M3×10钢螺钉：8角码双轴＋O4 Pro相机侧板4',20,.75),
  ('H05','M3×6电机螺钉，长度需按电机复核',16,.5),
  ('H06','M3防松螺母',46,.38),
  ('H07','M3薄平垫片',108,.08),
@@ -19,7 +19,7 @@ hardware=[
  ('H11','图传间隔柱、绝缘薄垫套件',1,3),
  ('H12','20mm宽电池绑带',2,5),
  ('H13','36×78×4mm防滑泡棉垫',1,2),
- ('H14','相机绑带/软垫＋导线固定件',1,3),
+ ('H14','O4 Pro相机M2侧螺钉/薄垫片＋导线固定件；实际螺纹拧入不得超过2mm',1,3),
  ('H15','管套/翼套/脚套胶接胶，装机留存量',1,8)]
 hw=sum(q*m for _,_,q,m in hardware)
 report['hardware_estimate_g']=round(hw,2);report['frame_estimate_g']=round(hw+report['CAD_frame_mass_g'],2)
@@ -43,6 +43,29 @@ for z in [-105,-75,-45]:
     v=sum(s.Volume() for s in frame.intersect(battery).solids().vals());travel.append(round(v,4))
 assert max(travel)<.01,travel
 report['checks']['battery_frame_interference_mm3_at_z_minus105_minus75_minus45']=travel
+# Validate the complete O4 Pro camera sweep from forward to straight down.
+camR=cq.importers.importStep(str(O/'P06R_O4Pro_camera_side.step'))
+camL=cq.importers.importStep(str(O/'P06L_O4Pro_camera_side.step'))
+camdeck=cq.importers.importStep(str(O/'C04_electronics_floor_2mm.step'))
+camera0=cq.Workplane('XY').box(20,23.3,25.55).translate((0,6,13))
+camclear=[]
+optical_collisions=[]
+for i in range(361):
+    angle=i*.25
+    camera=camera0.rotate((0,10.35,5),(1,10.35,5),angle)
+    vmount=sum(s.Volume() for s in camera.intersect(camR).solids().vals())+sum(s.Volume() for s in camera.intersect(camL).solids().vals())
+    vdeck=sum(s.Volume() for s in camera.intersect(camdeck).solids().vals())
+    assert vmount<1e-6 and vdeck<1e-6,(angle,vmount,vdeck)
+    camclear.append(camera.val().BoundingBox().ymin-camdeck.val().BoundingBox().ymax)
+    a=math.radians(angle);dy=6-10.35;dz=13-5
+    cy0=10.35+dy*math.cos(a)-dz*math.sin(a);cz0=5+dy*math.sin(a)+dz*math.cos(a)
+    fy,fz=-math.sin(a),math.cos(a)
+    ly,lz=cy0+25.55/2*fy,cz0+25.55/2*fz
+    ray=cq.Workplane('XY').newObject([cq.Solid.makeCylinder(.10,200,cq.Vector(0,ly,lz),cq.Vector(0,fy,fz))])
+    vray=sum(s.Volume() for s in ray.intersect(camdeck).solids().vals())
+    if vray>1e-6:optical_collisions.append((angle,vray))
+assert not optical_collisions,optical_collisions[:5]
+report['checks']['O4Pro_camera_sweep']={'range_deg':[0,90],'step_deg':.25,'samples':361,'collision_count':0,'optical_axis_collision_count':0,'downward_view_aperture_mm_xz':[24,25],'minimum_deck_clearance_mm':round(min(camclear),3)}
 (O/'geometry_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 lines=['# H440 B1 机架 BOM 与重量预算','',f'标准配置：PLA机翼、ABS连接件、2/3/4mm碳板、两根碳管，O4 Pro安装板。CAD结构净重 **{report["CAD_frame_mass_g"]:.1f} g**；紧固件、绑带、防滑垫与胶估计 **{hw:.1f} g**；机架合计 **{report["frame_estimate_g"]:.1f} g**。建议按 **550 g** 留重量预算，首件称重前合理估计范围约 **480–570 g**。','',
 '这是机架重量，包含安装五金但不包含电机、桨、飞塔、图传相机、接收机、电池和完整云台。质量按CAD体积×密度估算，金属/软材料为预算假设，尚未切片或称重。',
@@ -54,7 +77,7 @@ for i,d,q,m in hardware:lines.append(f'|{i}|{d}|{q}|{m:.2f}|{q*m:.2f}|')
 lines+=['','## 替代件，不能重复计入标准装机重量','','|件号|说明|质量 g|','|---|---|---:|']
 for n,d in report['parts'].items():
     if d['optional']:lines.append(f'|{n}|{d["description"]}|{d["unit_mass_g"]:.2f}|')
-lines+=['','O4/模拟图传板替换P07；云台接口板替换P06。云台预留只包括接口，舵机、转轴和运动支架须另设计并单独计重。相机减径衬块按所选相机追加。','',
+lines+=['','O4/模拟图传板替换P07；P10云台接口板作为独立替代配置使用，不与P06R/P06L O4 Pro相机侧板重复计入。云台预留只包括接口，舵机、转轴和运动支架须另设计并单独计重。P14通用相机座及P11/P12/P13减径衬块按所选非O4 Pro相机配置追加。','',
 '## 材料口径与采购下料','',
 '- PLA按1.24 g/cm³，ABS按1.04 g/cm³，碳板/碳管统一按1.60 g/cm³预算。实际耗材和碳材的密度、铺层、树脂含量会变化，不能把此处密度当成供应商证书。',
 '- 2mm碳板：C01/C02/C03/C04各1；可先按400×250mm毛坯排版，切割厂需用DXF核实刀缝、夹持和余料。',

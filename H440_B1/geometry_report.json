@@ -54,8 +54,8 @@
       "qty": 1,
       "description": "开放飞塔/图传托板，2mm",
       "optional": false,
-      "volume_mm3": 13258.298,
-      "unit_mass_g": 21.213,
+      "volume_mm3": 12021.981,
+      "unit_mass_g": 19.235,
       "bounds_mm": [
         62.0,
         2.0,
@@ -304,23 +304,42 @@
         73.3
       ]
     },
-    "P06_camera_cradle": {
+    "P06R_O4Pro_camera_side": {
       "mat": "ABS",
       "qty": 1,
-      "description": "26mm通用相机座",
+      "description": "O4 Pro右相机侧板，M2枢轴+0-90度弧形锁紧槽",
       "optional": false,
-      "volume_mm3": 8433.525,
-      "unit_mass_g": 8.771,
+      "volume_mm3": 4003.99,
+      "unit_mass_g": 4.164,
       "bounds_mm": [
-        34.0,
-        29.0,
-        28.0
+        12.0,
+        40.0,
+        34.0
       ],
       "valid": true,
       "print_bounds_mm": [
         34.0,
-        28.0,
-        29.0
+        40.0,
+        12.0
+      ]
+    },
+    "P06L_O4Pro_camera_side": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "O4 Pro左相机侧板，M2枢轴+0-90度弧形锁紧槽",
+      "optional": false,
+      "volume_mm3": 4003.99,
+      "unit_mass_g": 4.164,
+      "bounds_mm": [
+        12.0,
+        40.0,
+        34.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        34.0,
+        40.0,
+        12.0
       ]
     },
     "P07_O4Pro_adapter": {
@@ -455,6 +474,25 @@
         16.0,
         12.0
       ]
+    },
+    "P14_camera_cradle_legacy": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "26mm通用相机座；O4普通版/模拟相机兼容替代件",
+      "optional": true,
+      "volume_mm3": 8433.525,
+      "unit_mass_g": 8.771,
+      "bounds_mm": [
+        34.0,
+        29.0,
+        28.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        34.0,
+        28.0,
+        29.0
+      ]
     }
   },
   "checks": {
@@ -481,6 +519,18 @@
       420
     ],
     "outer_wing_gap_at_pylon_mm": 3.4,
+    "O4Pro_camera_envelope_mm_xyz": [
+      20.0,
+      23.3,
+      25.55
+    ],
+    "O4Pro_camera_clear_width_mm": 20.4,
+    "O4Pro_camera_angle_range_deg": [
+      0,
+      90
+    ],
+    "O4Pro_camera_M2_pitch_mm": 16.0,
+    "O4Pro_camera_slot_width_mm": 2.6,
     "STEP_roundtrip_all_valid": true,
     "DXF_units": {
       "C01_center_side_R_2mm_cut_mm.dxf": {
@@ -497,7 +547,7 @@
       },
       "C04_electronics_floor_2mm_cut_mm.dxf": {
         "INSUNITS": 4,
-        "entity_count": 46
+        "entity_count": 52
       },
       "C05_pylon_R_3mm_cut_mm.dxf": {
         "INSUNITS": 4,
@@ -516,16 +566,31 @@
       0,
       0,
       0
-    ]
+    ],
+    "O4Pro_camera_sweep": {
+      "range_deg": [
+        0,
+        90
+      ],
+      "step_deg": 0.25,
+      "samples": 361,
+      "collision_count": 0,
+      "optical_axis_collision_count": 0,
+      "downward_view_aperture_mm_xz": [
+        24,
+        25
+      ],
+      "minimum_deck_clearance_mm": 2.128
+    }
   },
   "material_mass_g": {
     "PLA": 121.56,
-    "ABS": 90.65,
-    "CFRP": 194.45
+    "ABS": 90.2,
+    "CFRP": 192.47
   },
-  "CAD_frame_mass_g": 406.65,
-  "hardware_estimate_g": 124.42,
-  "frame_estimate_g": 531.07,
+  "CAD_frame_mass_g": 404.23,
+  "hardware_estimate_g": 125.92,
+  "frame_estimate_g": 530.15,
   "hardware": [
     {
       "id": "H01",
@@ -547,8 +612,8 @@
     },
     {
       "id": "H04",
-      "description": "M3×10钢螺钉：8角码双轴＋相机2",
-      "qty": 18,
+      "description": "M3×10钢螺钉：8角码双轴＋O4 Pro相机侧板4",
+      "qty": 20,
       "unit_mass_g": 0.75
     },
     {
@@ -607,7 +672,7 @@
     },
     {
       "id": "H14",
-      "description": "相机绑带/软垫＋导线固定件",
+      "description": "O4 Pro相机M2侧螺钉/薄垫片＋导线固定件；实际螺纹拧入不得超过2mm",
       "qty": 1,
       "unit_mass_g": 3
     },
