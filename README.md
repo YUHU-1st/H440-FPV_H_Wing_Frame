@@ -1,14 +1,14 @@
 # H440 FPV H-Wing Tailsitter / H形尾座式垂起固定翼
 
-> **B2 structural revision / B2 结构修订：** [开放电池托板、中央榫槽连接及加强机臂 / Open battery tray, bonded mortises and reinforced pylons](H440_B2/README.md). B2 STEP/DXF and comparative stiffness screening are available; native SolidWorks save/reopen is pending. B2 的 STEP/DXF 和刚度比较已生成，原生 SolidWorks 保存复核尚未完成。下方 B1 内容保留为历史制造档案。
+> **B2 structural revision / B2 结构修订：** [开放电池托板、中央榫槽连接及加强机臂 / Open battery tray, bonded mortises and reinforced pylons](H440_B2/README.md). B2 STEP/DXF, comparative stiffness screening, and native SolidWorks save/reopen validation are complete. B2 的 STEP/DXF、刚度比较和 SolidWorks 原生保存/重开复核均已完成。下方 B1 内容保留为历史制造档案。
 
 [中文说明](docs/README_zh-CN.md) · [English](docs/README_en.md) · [B1 validation / B1 复核](H440_B1/PR1复核报告.md) · [BOM](H440_B1/BOM与重量预算.md)
 
 ![H440 B1 isometric view](H440_B1/H440_B1_isometric.png)
 
-H440 is an engineering prototype for a compact, four-motor H-layout tailsitter VTOL airframe. The active B1 revision combines PLA printed wing shells, ABS fittings, 2–4 mm CFRP plates and continuous carbon-tube spars. It uses differential motor control without servos or aerodynamic control surfaces.
+H440 is an engineering prototype for a compact, four-motor H-layout tailsitter VTOL airframe. The historical B1 manufacturing revision combines PLA printed wing shells, ABS fittings, 2–4 mm CFRP plates and continuous carbon-tube spars; the current B2 structural revision is documented separately above. It uses differential motor control without servos or aerodynamic control surfaces.
 
-H440 是一款紧凑型四电机 H 形尾座式垂直起降固定翼工程样机。当前 B1 版本采用 PLA 打印机翼、ABS 连接件、2～4 mm 碳板和贯穿式碳管承力，并通过四电机差速控制飞行，不使用舵机和气动舵面。
+H440 是一款紧凑型四电机 H 形尾座式垂直起降固定翼工程样机。历史 B1 制造版本采用 PLA 打印机翼、ABS 连接件、2～4 mm 碳板和贯穿式碳管承力；当前 B2 结构修订见上方独立说明。整机构型通过四电机差速控制飞行，不使用舵机和气动舵面。
 
 > **Prototype status / 样机状态：** CAD geometry, exports and native SolidWorks deliverables have been checked. Physical strength, propulsion, vibration, transition control and flight performance remain to be tested. / CAD 几何、导出文件和 SolidWorks 原生交付已检查；结构、动力、振动、转换控制和飞行性能仍需实物验证。
 

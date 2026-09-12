@@ -13,10 +13,13 @@ This revision removes the battery cage and eight printed center-frame angles. In
 - [碳板 DXF＋STEP 包 / CFRP package](H440_B2_supplier_DXF_STEP.zip)
 - [打印件 STEP 包 / Printed parts](H440_B2_printed_parts_STEP.zip)
 - [总装 STEP / Assembly STEP](H440_B2_FRAME.step)
+- [SolidWorks 原生总装 / Native SolidWorks assembly](H440_B2_FRAME.SLDASM)
+- `*.SLDPRT`：27 种 B2 原生零件；`SolidWorks_Assembly_Parts/`：总装使用的持久化实例文件。
+- [SolidWorks 原生保存/重开报告 / Native save/reopen report](solidworks_native_report.json)
 - [结构复核与装配要求 / Structural screening and assembly notes](结构复核与装配要求.md)
 - [BOM 与重量预算](BOM与重量预算.md)
-- **B2 SolidWorks 原生文件尚未保存验证。** 本机桌面控制接口在打开对话框持续返回失效控件/焦点错误，恢复尝试未成功。B1 的 SLDPRT/SLDASM 是历史文件，不能当作 B2 使用。
-- **B2 native SolidWorks save/reopen remains pending.** Desktop automation failed to control the file dialog reliably. B1 native files are historical and do not represent B2.
+- **B2 SolidWorks 原生交付已完成验证。** 27 种原生零件均在 SolidWorks 2024 SP0.1 中静默重开通过；总装包含 35 个生成实例，重开错误为 0，所有组件引用均落在 `H440_B2/` 交付目录内。STEP 导入在本机表现为扁平化 35 零件树，脚本同时兼容带根包装总成的导入形态。
+- **B2 native SolidWorks delivery is verified.** All 27 native part files reopen in SolidWorks 2024 SP0.1. The assembly contains 35 generated instances, reopens with zero load errors, and every component reference resolves inside the `H440_B2/` delivery directory. The local STEP import resolves as a flattened 35-part tree; the delivery script also supports a wrapper-subassembly import shape.
 
 ![B2 front](H440_B2_front.png)
 

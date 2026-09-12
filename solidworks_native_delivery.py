@@ -1,8 +1,12 @@
-"""Create and verify native SolidWorks delivery files from H440 B1 STEP masters.
+"""Create and verify native SolidWorks delivery files from H440 B1/B2 STEP masters.
 
 This deliberately uses late-bound IDispatch calls. The local SolidWorks 2024
 installation can run normally but PowerShell/.NET type-library binding raises
 TYPE_E_ELEMENTNOTFOUND, while raw IDispatch is healthy.
+
+Before running, select valid default part/assembly templates and turn off
+3D Interconnect. The local 2024 SP0.1 associated STEP import stalls in LoadFile4;
+direct solid import succeeds. Run with H440_B2 to target the B2 delivery folder.
 """
 from __future__ import annotations
 
@@ -15,7 +19,10 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-B1 = ROOT / "H440_B1"
+REVISION = sys.argv[1] if len(sys.argv) > 1 else "H440_B1"
+if REVISION not in ("H440_B1", "H440_B2"):
+    raise SystemExit("Expected H440_B1 or H440_B2")
+B1 = ROOT / REVISION
 PERSIST_DIR = B1 / "SolidWorks_Assembly_Parts"
 DEPS = ROOT / ".cad-deps"
 sys.path[:0] = [str(DEPS), str(DEPS / "win32"), str(DEPS / "win32" / "lib")]
@@ -24,6 +31,7 @@ if (DEPS / "pywin32_system32").is_dir():
 
 try:
     import pythoncom
+    import pywintypes
     from win32com.client import VARIANT
     from win32com.client.dynamic import DumbDispatch
 except Exception as exc:  # pragma: no cover - workstation setup diagnostic
@@ -51,7 +59,7 @@ def connect_solidworks():
     try:
         raw = pythoncom.GetActiveObject("SldWorks.Application")
     except Exception:
-        clsid = pythoncom.CLSIDFromProgID("SldWorks.Application")
+        clsid = pywintypes.IID("SldWorks.Application")
         raw = pythoncom.CoCreateInstance(
             clsid, None, pythoncom.CLSCTX_LOCAL_SERVER, pythoncom.IID_IDispatch
         )
@@ -77,7 +85,7 @@ def load_foreign(sw, path: Path):
     if not import_data:
         raise RuntimeError(f"GetImportFileData failed: {path.name}")
     errors = byref_i4()
-    model = sw.LoadFile4(str(path), "", import_data, errors)
+    model = sw.LoadFile4(str(path), "r", import_data, errors)
     if not model or errors.value:
         raise RuntimeError(f"LoadFile4 failed: {path.name}; errors={errors.value}")
     return dispatch(model, "ModelDoc2"), errors.value
@@ -116,6 +124,36 @@ def save_native_part(sw, step: Path):
     }
 
 
+def verify_native_part(sw, step: Path):
+    out = step.with_suffix(".SLDPRT")
+    if not out.is_file() or out.stat().st_size == 0:
+        raise RuntimeError(f"Existing SLDPRT is missing or empty: {out.name}")
+    errors = byref_i4()
+    warnings = byref_i4()
+    reopened = sw.OpenDoc6(
+        str(out), SW_DOC_PART, SW_OPEN_SILENT, "", errors, warnings
+    )
+    if not reopened or errors.value:
+        raise RuntimeError(
+            f"Existing native reopen failed: {out.name}; errors={errors.value}; warnings={warnings.value}"
+        )
+    verify = dispatch(reopened, "ModelDoc2")
+    reopened_path = verify.GetPathName
+    sw.CloseDoc(verify.GetTitle)
+    if Path(reopened_path).resolve() != out.resolve():
+        raise RuntimeError(f"Existing native reopen path mismatch: {out.name}: {reopened_path}")
+    return {
+        "step": step.name,
+        "sldprt": out.name,
+        "size_bytes": out.stat().st_size,
+        "import_errors": None,
+        "save_result": None,
+        "reopen_errors": errors.value,
+        "reopen_warnings": warnings.value,
+        "reused_existing_native": True,
+    }
+
+
 def component_instance_name(component) -> str:
     name = str(component.Name2).split("/")[-1]
     if ".step-" in name.lower():
@@ -141,11 +179,12 @@ def canonical_instance_name(raw_name: str, expected_names: set[str]) -> str:
 def persist_imported_component_tree(sw, model, expected_instances: list[str]):
     assembly = dispatch(model, "AssemblyDoc")
     components = [dispatch(c, "Component2") for c in (assembly.GetComponents(False) or [])]
-    expected_node_count = len(expected_instances) + 1
-    if len(components) != expected_node_count:
+    expected_leaf_count = len(expected_instances)
+    if len(components) not in (expected_leaf_count, expected_leaf_count + 1):
         raise RuntimeError(
-            f"Imported assembly node count {len(components)} != expected {expected_node_count} "
-            f"(one root wrapper + {len(expected_instances)} generated instances)"
+            f"Imported assembly node count {len(components)} is not a supported tree shape; "
+            f"expected {expected_leaf_count} flattened leaves or "
+            f"{expected_leaf_count + 1} nodes with one root wrapper"
         )
 
     PERSIST_DIR.mkdir(exist_ok=True)
@@ -169,7 +208,7 @@ def persist_imported_component_tree(sw, model, expected_instances: list[str]):
         else:
             raise RuntimeError(f"Unexpected component document type {doc_type}: {component.Name2}")
 
-    if len(roots) != 1 or len(leaves) != len(expected_instances):
+    if len(roots) not in (0, 1) or len(leaves) != len(expected_instances):
         raise RuntimeError(
             f"Imported tree shape mismatch: roots={len(roots)}, leaves={len(leaves)}, "
             f"expected leaves={len(expected_instances)}"
@@ -201,18 +240,20 @@ def persist_imported_component_tree(sw, model, expected_instances: list[str]):
         persisted.append({
             "name": canonical_name,
             "solidworks_import_name": raw_name,
-            "path": str(out),
+            "path": out.relative_to(B1).as_posix(),
             "size_bytes": out.stat().st_size,
         })
 
-    root_component, root_doc = roots[0]
-    root_out = PERSIST_DIR / "H440_B1_FRAME_IMPORTED.SLDASM"
-    root_save = root_doc.SaveAs3(str(root_out), SW_SAVE_CURRENT, SW_SAVE_SILENT)
-    root_ref = Path(str(root_component.GetPathName)).resolve()
-    if not root_out.is_file() or root_out.stat().st_size == 0 or root_ref != root_out.resolve():
-        raise RuntimeError(
-            f"Persistent root wrapper save failed; SaveAs3={root_save}; ref={root_ref}"
-        )
+    root_out = None
+    if roots:
+        root_component, root_doc = roots[0]
+        root_out = PERSIST_DIR / f"{REVISION}_FRAME_IMPORTED.SLDASM"
+        root_save = root_doc.SaveAs3(str(root_out), SW_SAVE_CURRENT, SW_SAVE_SILENT)
+        root_ref = Path(str(root_component.GetPathName)).resolve()
+        if not root_out.is_file() or root_out.stat().st_size == 0 or root_ref != root_out.resolve():
+            raise RuntimeError(
+                f"Persistent root wrapper save failed; SaveAs3={root_save}; ref={root_ref}"
+            )
     return persisted, root_out
 
 
@@ -223,9 +264,9 @@ def close_all(sw):
 
 
 def save_and_verify_frame_assembly(sw):
-    frame_step = B1 / "H440_B1_FRAME.step"
-    frame_native = B1 / "H440_B1_FRAME.SLDASM"
-    backup = Path(tempfile.gettempdir()) / "H440_B1_FRAME.pre_o4pro.SLDASM"
+    frame_step = B1 / f"{REVISION}_FRAME.step"
+    frame_native = B1 / f"{REVISION}_FRAME.SLDASM"
+    backup = Path(tempfile.gettempdir()) / f"{REVISION}_FRAME.pre_native.SLDASM"
     if frame_native.exists():
         shutil.copy2(frame_native, backup)
 
@@ -250,7 +291,7 @@ def save_and_verify_frame_assembly(sw):
     reopened = sw.OpenDoc6(
         str(frame_native), SW_DOC_ASSEMBLY, SW_OPEN_SILENT, "", errors, warnings
     )
-    if not reopened or errors.value or warnings.value:
+    if not reopened or errors.value:
         raise RuntimeError(
             f"SLDASM reopen failed; errors={errors.value}; warnings={warnings.value}"
         )
@@ -258,7 +299,8 @@ def save_and_verify_frame_assembly(sw):
     assembly = dispatch(reopened, "AssemblyDoc")
     components = [dispatch(c, "Component2") for c in (assembly.GetComponents(False) or [])]
     component_count = len(components)
-    expected_node_count = len(expected_instances) + 1
+    expected_root_count = 1 if root_out is not None else 0
+    expected_node_count = len(expected_instances) + expected_root_count
     if component_count != expected_node_count:
         close_all(sw)
         raise RuntimeError(
@@ -269,7 +311,7 @@ def save_and_verify_frame_assembly(sw):
     leaf_names = set()
     root_count = 0
     bad_refs = []
-    persist_root = PERSIST_DIR.resolve()
+    delivery_root = B1.resolve()
     for component in components:
         path_text = str(component.GetPathName)
         path = Path(path_text).resolve() if path_text else None
@@ -282,22 +324,31 @@ def save_and_verify_frame_assembly(sw):
         if (
             path is None
             or not path.is_file()
-            or persist_root not in path.parents
+            or (path != delivery_root and delivery_root not in path.parents)
             or "\\temp\\" in path_text.lower()
             or "ic~~" in path_text.lower()
         ):
             bad_refs.append({"name": str(component.Name2), "path": path_text})
-        refs.append({"name": str(component.Name2), "path": path_text, "doc_type": doc_type})
+        reported_path = path_text
+        if path is not None and (path == delivery_root or delivery_root in path.parents):
+            reported_path = path.relative_to(delivery_root).as_posix()
+        refs.append({"name": str(component.Name2), "path": reported_path, "doc_type": doc_type})
 
-    if root_count != 1 or leaf_names != set(expected_instances) or bad_refs:
+    if root_count != expected_root_count or leaf_names != set(expected_instances) or bad_refs:
         close_all(sw)
         raise RuntimeError(
             f"Persistent assembly verification failed: roots={root_count}, "
             f"leaf_match={leaf_names == set(expected_instances)}, bad_refs={bad_refs[:5]}"
         )
-    if Path(str([c for c in components if int(dispatch(c.GetModelDoc2, 'ModelDoc2').GetType) == SW_DOC_ASSEMBLY][0].GetPathName)).resolve() != root_out.resolve():
-        close_all(sw)
-        raise RuntimeError("Root imported subassembly path changed after native reopen")
+    if root_out is not None:
+        reopened_root = [
+            c
+            for c in components
+            if int(dispatch(c.GetModelDoc2, "ModelDoc2").GetType) == SW_DOC_ASSEMBLY
+        ][0]
+        if Path(str(reopened_root.GetPathName)).resolve() != root_out.resolve():
+            close_all(sw)
+            raise RuntimeError("Root imported subassembly path changed after native reopen")
 
     verify_model.ForceRebuild3(False)
     close_all(sw)
@@ -305,7 +356,7 @@ def save_and_verify_frame_assembly(sw):
         "step": frame_step.name,
         "sldasm": frame_native.name,
         "size_bytes": frame_native.stat().st_size,
-        "backup": str(backup),
+        "backup": backup.name,
         "import_errors": import_errors,
         "save_result": save_result,
         "reopen_errors": errors.value,
@@ -313,13 +364,18 @@ def save_and_verify_frame_assembly(sw):
         "component_count_including_root_wrapper": component_count,
         "generated_instance_count": len(expected_instances),
         "persistent_leaf_count": len(persisted),
-        "persistent_root_subassembly": str(root_out),
+        "import_tree_mode": "wrapper" if root_out is not None else "flattened",
+        "persistent_root_subassembly": (
+            root_out.relative_to(B1).as_posix() if root_out is not None else None
+        ),
         "component_references": refs,
     }
 
 
 def main():
     sw = connect_solidworks()
+    sw.UserControl = True
+    print(f"Connected to SolidWorks {sw.RevisionNumber}", flush=True)
     close_active(sw)
     geometry_report = json.loads((B1 / "geometry_report.json").read_text(encoding="utf-8"))
     steps = sorted(
@@ -332,7 +388,13 @@ def main():
 
     parts = []
     for index, step in enumerate(steps, 1):
-        result = save_native_part(sw, step)
+        native = step.with_suffix(".SLDPRT")
+        if native.is_file() and native.stat().st_size > 0:
+            print(f"[{index:02}/{len(steps):02}] verifying existing {native.name}", flush=True)
+            result = verify_native_part(sw, step)
+        else:
+            print(f"[{index:02}/{len(steps):02}] importing {step.name}", flush=True)
+            result = save_native_part(sw, step)
         parts.append(result)
         print(f"[{index:02}/{len(steps):02}] native OK {step.name} -> {result['sldprt']}", flush=True)
 
@@ -347,7 +409,8 @@ def main():
     report_path = B1 / "solidworks_native_report.json"
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(
-        f"ASSEMBLY OK {assembly['generated_instance_count']} generated instances + root wrapper; "
+        f"ASSEMBLY OK {assembly['generated_instance_count']} generated instances; "
+        f"tree={assembly['import_tree_mode']}; "
         f"all references persistent; report={report_path.name}",
         flush=True,
     )

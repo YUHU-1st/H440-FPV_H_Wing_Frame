@@ -4,5 +4,7 @@
 *.stl -text -diff
 *.zip -text -diff
 *.png -text -diff
+*.SLDPRT -text -diff
+*.SLDASM -text -diff
 *.md text eol=lf
 *.json text eol=lf
