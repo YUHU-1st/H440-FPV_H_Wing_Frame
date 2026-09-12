@@ -1,0 +1,673 @@
+{
+  "revision": "B2",
+  "status": "GEOMETRY CHECKED; NO STRUCTURAL OR FLIGHT VALIDATION",
+  "density_g_cm3": {
+    "PLA": 1.24,
+    "ABS": 1.04,
+    "CFRP": 1.6
+  },
+  "parts": {
+    "C01_center_side_R_2mm": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "中央右侧板，2mm碳板",
+      "optional": false,
+      "volume_mm3": 5741.266,
+      "unit_mass_g": 9.186,
+      "bounds_mm": [
+        2.0,
+        47.0,
+        95.0
+      ],
+      "valid": true
+    },
+    "C02_center_side_L_2mm": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "中央左侧板，2mm碳板",
+      "optional": false,
+      "volume_mm3": 5741.266,
+      "unit_mass_g": 9.186,
+      "bounds_mm": [
+        2.0,
+        47.0,
+        95.0
+      ],
+      "valid": true
+    },
+    "C03_battery_floor_2mm": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "电池托板，2mm，双纵向穿带槽",
+      "optional": false,
+      "volume_mm3": 13916.8,
+      "unit_mass_g": 22.267,
+      "bounds_mm": [
+        65.6,
+        2.0,
+        148.0
+      ],
+      "valid": true
+    },
+    "C04_electronics_floor_2mm": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "开放飞塔/图传托板，2mm",
+      "optional": false,
+      "volume_mm3": 12267.415,
+      "unit_mass_g": 19.628,
+      "bounds_mm": [
+        65.6,
+        2.0,
+        150.0
+      ],
+      "valid": true
+    },
+    "T01_main_10x8_L420": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "碳管OD10/ID8×420，整根贯穿",
+      "optional": false,
+      "volume_mm3": 11875.22,
+      "unit_mass_g": 19.0,
+      "bounds_mm": [
+        420.0,
+        10.0,
+        10.0
+      ],
+      "valid": true
+    },
+    "T02_rear_6x4_L420": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "碳管OD6/ID4×420，整根贯穿",
+      "optional": false,
+      "volume_mm3": 6597.345,
+      "unit_mass_g": 10.556,
+      "bounds_mm": [
+        420.0,
+        6.0,
+        6.0
+      ],
+      "valid": true
+    },
+    "P02_main_collar": {
+      "mat": "ABS",
+      "qty": 4,
+      "description": "胶接翼梁法兰套，内孔Ø10.3，2-M3嵌件",
+      "optional": false,
+      "volume_mm3": 4262.544,
+      "unit_mass_g": 4.433,
+      "bounds_mm": [
+        12.0,
+        24.0,
+        24.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        24.0,
+        24.0,
+        12.0
+      ]
+    },
+    "P03_rear_collar": {
+      "mat": "ABS",
+      "qty": 4,
+      "description": "胶接翼梁法兰套，内孔Ø6.3，2-M3嵌件",
+      "optional": false,
+      "volume_mm3": 4888.35,
+      "unit_mass_g": 5.084,
+      "bounds_mm": [
+        12.0,
+        24.0,
+        24.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        24.0,
+        24.0,
+        12.0
+      ]
+    },
+    "C05_pylon_R_4mm": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "右侧4mm交叉加强桁架，四孔电机座接口",
+      "optional": false,
+      "volume_mm3": 41420.477,
+      "unit_mass_g": 66.273,
+      "bounds_mm": [
+        4.0,
+        194.0,
+        173.0
+      ],
+      "valid": true
+    },
+    "C06_pylon_L_4mm": {
+      "mat": "CFRP",
+      "qty": 1,
+      "description": "左侧4mm交叉加强桁架，四孔电机座接口",
+      "optional": false,
+      "volume_mm3": 41420.477,
+      "unit_mass_g": 66.273,
+      "bounds_mm": [
+        4.0,
+        194.0,
+        173.0
+      ],
+      "valid": true
+    },
+    "C07_motor_plate_4mm": {
+      "mat": "CFRP",
+      "qty": 4,
+      "description": "电机板4mm；16孔距电机/24孔距转接",
+      "optional": false,
+      "volume_mm3": 4608.094,
+      "unit_mass_g": 7.373,
+      "bounds_mm": [
+        36.0,
+        36.0,
+        4.0
+      ],
+      "valid": true
+    },
+    "P04_motor_clevis": {
+      "mat": "ABS",
+      "qty": 4,
+      "description": "4mm桁架四孔U座，外侧三角筋加强，4.15mm夹槽",
+      "optional": false,
+      "volume_mm3": 12276.28,
+      "unit_mass_g": 12.767,
+      "bounds_mm": [
+        30.0,
+        38.0,
+        26.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        30.0,
+        38.0,
+        26.0
+      ]
+    },
+    "P05_tail_shoe": {
+      "mat": "ABS",
+      "qty": 4,
+      "description": "可更换着陆脚套，胶接4mm侧板边缘",
+      "optional": false,
+      "volume_mm3": 1706.4,
+      "unit_mass_g": 1.775,
+      "bounds_mm": [
+        14.0,
+        18.0,
+        8.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        8.0,
+        18.0,
+        14.0
+      ]
+    },
+    "W01_inner_R": {
+      "mat": "PLA",
+      "qty": 1,
+      "description": "右翼内段，0.6mm标称皮+管套/0.8mm肋",
+      "optional": false,
+      "volume_mm3": 28294.344,
+      "unit_mass_g": 35.085,
+      "bounds_mm": [
+        108.8,
+        16.8,
+        140.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        140.0,
+        16.8,
+        108.8
+      ]
+    },
+    "W02_outer_R": {
+      "mat": "PLA",
+      "qty": 1,
+      "description": "右翼外段，0.6mm标称皮+管套/0.8mm肋",
+      "optional": false,
+      "volume_mm3": 19905.187,
+      "unit_mass_g": 24.682,
+      "bounds_mm": [
+        72.8,
+        16.8,
+        140.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        140.0,
+        16.8,
+        72.8
+      ]
+    },
+    "W03_inner_L": {
+      "mat": "PLA",
+      "qty": 1,
+      "description": "左翼内段，0.6mm标称皮+管套/0.8mm肋",
+      "optional": false,
+      "volume_mm3": 28294.344,
+      "unit_mass_g": 35.085,
+      "bounds_mm": [
+        108.8,
+        16.8,
+        140.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        140.0,
+        16.8,
+        108.8
+      ]
+    },
+    "W04_outer_L": {
+      "mat": "PLA",
+      "qty": 1,
+      "description": "左翼外段，0.6mm标称皮+管套/0.8mm肋",
+      "optional": false,
+      "volume_mm3": 19905.187,
+      "unit_mass_g": 24.682,
+      "bounds_mm": [
+        72.8,
+        16.8,
+        140.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        140.0,
+        16.8,
+        72.8
+      ]
+    },
+    "P06R_O4Pro_camera_side": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "O4 Pro右相机侧板，M2枢轴+0-90度弧形锁紧槽",
+      "optional": false,
+      "volume_mm3": 4003.99,
+      "unit_mass_g": 4.164,
+      "bounds_mm": [
+        12.0,
+        40.0,
+        34.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        34.0,
+        40.0,
+        12.0
+      ]
+    },
+    "P06L_O4Pro_camera_side": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "O4 Pro左相机侧板，M2枢轴+0-90度弧形锁紧槽",
+      "optional": false,
+      "volume_mm3": 4003.99,
+      "unit_mass_g": 4.164,
+      "bounds_mm": [
+        12.0,
+        40.0,
+        34.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        34.0,
+        40.0,
+        12.0
+      ]
+    },
+    "P07_O4Pro_adapter": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "O4 Pro25.5-M2适配板",
+      "optional": false,
+      "volume_mm3": 3511.354,
+      "unit_mass_g": 3.652,
+      "bounds_mm": [
+        46.0,
+        2.4,
+        40.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        46.0,
+        40.0,
+        2.4
+      ]
+    },
+    "P08_O4_adapter": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "O4普通版软安装板",
+      "optional": true,
+      "volume_mm3": 3492.127,
+      "unit_mass_g": 3.632,
+      "bounds_mm": [
+        46.0,
+        2.4,
+        40.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        46.0,
+        40.0,
+        2.4
+      ]
+    },
+    "P09_analog_adapter": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "模拟20-M2安装板",
+      "optional": true,
+      "volume_mm3": 3511.354,
+      "unit_mass_g": 3.652,
+      "bounds_mm": [
+        46.0,
+        2.4,
+        40.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        46.0,
+        40.0,
+        2.4
+      ]
+    },
+    "P10_gimbal_dock": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "单轴云台预留板，非整套云台",
+      "optional": true,
+      "volume_mm3": 7443.175,
+      "unit_mass_g": 7.741,
+      "bounds_mm": [
+        44.0,
+        4.0,
+        50.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        44.0,
+        50.0,
+        4.0
+      ]
+    },
+    "P11_O4_camera_insert": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "14.4mm相机衬块",
+      "optional": true,
+      "volume_mm3": 2649.6,
+      "unit_mass_g": 2.756,
+      "bounds_mm": [
+        25.8,
+        12.0,
+        16.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        25.8,
+        16.0,
+        12.0
+      ]
+    },
+    "P12_analog_camera_insert": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "19.4mm相机衬块",
+      "optional": true,
+      "volume_mm3": 1849.6,
+      "unit_mass_g": 1.924,
+      "bounds_mm": [
+        25.8,
+        12.0,
+        16.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        25.8,
+        16.0,
+        12.0
+      ]
+    },
+    "P13_camera20_insert": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "20.4mm相机衬块",
+      "optional": true,
+      "volume_mm3": 1689.6,
+      "unit_mass_g": 1.757,
+      "bounds_mm": [
+        25.8,
+        12.0,
+        16.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        25.8,
+        16.0,
+        12.0
+      ]
+    },
+    "P14_camera_cradle_legacy": {
+      "mat": "ABS",
+      "qty": 1,
+      "description": "26mm通用相机座；O4普通版/模拟相机兼容替代件",
+      "optional": true,
+      "volume_mm3": 8433.525,
+      "unit_mass_g": 8.771,
+      "bounds_mm": [
+        34.0,
+        29.0,
+        28.0
+      ],
+      "valid": true,
+      "print_bounds_mm": [
+        34.0,
+        28.0,
+        29.0
+      ]
+    }
+  },
+  "checks": {
+    "interferences_mm3": [],
+    "wing_span_mm": 440,
+    "prop_spacing_mm": [
+      290,
+      156
+    ],
+    "prop_gap_mm": 29,
+    "battery_assumed_mm": [
+      78,
+      48,
+      52
+    ],
+    "battery_floor_mm": [
+      62,
+      148
+    ],
+    "battery_travel_geometric_mm": 70,
+    "battery_recommended_travel_mm": 60,
+    "tube_lengths_mm": [
+      420,
+      420
+    ],
+    "outer_wing_gap_at_pylon_mm": 4.4,
+    "O4Pro_camera_envelope_mm_xyz": [
+      20.0,
+      23.3,
+      25.55
+    ],
+    "O4Pro_camera_clear_width_mm": 20.4,
+    "O4Pro_camera_angle_range_deg": [
+      0,
+      90
+    ],
+    "O4Pro_camera_M2_pitch_mm": 16.0,
+    "O4Pro_camera_slot_width_mm": 2.6,
+    "STEP_roundtrip_all_valid": true,
+    "DXF_units": {
+      "C01_center_side_R_2mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 64
+      },
+      "C02_center_side_L_2mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 64
+      },
+      "C03_battery_floor_2mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 40
+      },
+      "C04_electronics_floor_2mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 48
+      },
+      "C05_pylon_R_4mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 70
+      },
+      "C06_pylon_L_4mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 70
+      },
+      "C07_motor_plate_4mm_cut_mm.dxf": {
+        "INSUNITS": 4,
+        "entity_count": 17
+      }
+    },
+    "battery_frame_interference_mm3_at_z_minus105_minus75_minus45": [
+      0,
+      0,
+      0
+    ],
+    "O4Pro_camera_sweep": {
+      "range_deg": [
+        0,
+        90
+      ],
+      "step_deg": 0.25,
+      "samples": 361,
+      "collision_count": 0,
+      "optical_axis_collision_count": 0,
+      "downward_view_aperture_mm_xz": [
+        24,
+        25
+      ],
+      "minimum_deck_clearance_mm": 2.128
+    }
+  },
+  "material_mass_g": {
+    "PLA": 119.53,
+    "ABS": 108.22,
+    "CFRP": 251.86
+  },
+  "CAD_frame_mass_g": 479.61,
+  "hardware_estimate_g": 124.4,
+  "frame_estimate_g": 604.01,
+  "hardware": [
+    {
+      "id": "H01",
+      "description": "M3×8钢螺钉：碳板到法兰套",
+      "qty": 16,
+      "unit_mass_g": 0.65
+    },
+    {
+      "id": "H02",
+      "description": "M3×12钢螺钉：电机板16＋图传转接4",
+      "qty": 20,
+      "unit_mass_g": 0.9
+    },
+    {
+      "id": "H03",
+      "description": "M3×22钢螺钉：电机U座四孔夹侧板，按垫片实测选长",
+      "qty": 16,
+      "unit_mass_g": 1.3
+    },
+    {
+      "id": "H04",
+      "description": "M3×10钢螺钉：O4 Pro相机侧板4；中央托板改榫槽胶接",
+      "qty": 4,
+      "unit_mass_g": 0.75
+    },
+    {
+      "id": "H05",
+      "description": "M3×6电机螺钉，长度需按电机复核",
+      "qty": 16,
+      "unit_mass_g": 0.5
+    },
+    {
+      "id": "H06",
+      "description": "M3防松螺母",
+      "qty": 38,
+      "unit_mass_g": 0.38
+    },
+    {
+      "id": "H07",
+      "description": "M3薄平垫片",
+      "qty": 92,
+      "unit_mass_g": 0.08
+    },
+    {
+      "id": "H08",
+      "description": "M3热熔嵌件，外径按Ø4.2试孔匹配",
+      "qty": 16,
+      "unit_mass_g": 0.3
+    },
+    {
+      "id": "H09",
+      "description": "4根飞塔绝缘柱＋配套尼龙螺钉",
+      "qty": 1,
+      "unit_mass_g": 6
+    },
+    {
+      "id": "H10",
+      "description": "图传M2紧固/胶圈套件",
+      "qty": 1,
+      "unit_mass_g": 2
+    },
+    {
+      "id": "H11",
+      "description": "图传间隔柱、绝缘薄垫套件",
+      "qty": 1,
+      "unit_mass_g": 3
+    },
+    {
+      "id": "H12",
+      "description": "20mm宽电池绑带",
+      "qty": 2,
+      "unit_mass_g": 5
+    },
+    {
+      "id": "H13",
+      "description": "36×78×4mm防滑泡棉垫",
+      "qty": 1,
+      "unit_mass_g": 2
+    },
+    {
+      "id": "H14",
+      "description": "O4 Pro相机M2侧螺钉/薄垫片＋导线固定件；实际螺纹拧入不得超过2mm",
+      "qty": 1,
+      "unit_mass_g": 3
+    },
+    {
+      "id": "H15",
+      "description": "管套/翼套/脚套及中央榫槽胶接胶，装机留存量",
+      "qty": 1,
+      "unit_mass_g": 10
+    },
+    {
+      "id": "H16",
+      "description": "电机夹槽0.05/0.10mm硬质金属配合垫片组，按实测选择",
+      "qty": 4,
+      "unit_mass_g": 0.4
+    }
+  ]
+}

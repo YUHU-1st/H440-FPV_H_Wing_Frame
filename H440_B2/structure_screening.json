@@ -1,0 +1,62 @@
+{
+  "scope": "fixed-root ideal 3D beam pylon screening; not complete-aircraft FEA",
+  "assumed_E_MPa": 32000,
+  "assumed_G_MPa": 12000,
+  "loads_are_assumptions_not_measured_motor_data": true,
+  "baseline": {
+    "nodes": 6,
+    "elements": 9,
+    "cases": {
+      "thrust_each_15N": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 2.7453607267568634,
+        "max_motor_translation_mm": 0.032265488866970296,
+        "max_motor_rotation_deg": 0.023117889425027814
+      },
+      "differential_thrust_15N": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 2.7453607267568634,
+        "max_motor_translation_mm": 0.032265488866970296,
+        "max_motor_rotation_deg": 0.023117889425027814
+      },
+      "lateral_each_3N": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 21.139604339413935,
+        "max_motor_translation_mm": 1.0330499815426368,
+        "max_motor_rotation_deg": 0.8549274941672641
+      },
+      "motor_torque_150Nmm": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 8.054779323153562,
+        "max_motor_translation_mm": 0.6230908295726052,
+        "max_motor_rotation_deg": 0.8968966220305723
+      }
+    }
+  },
+  "reinforced": {
+    "nodes": 8,
+    "elements": 15,
+    "cases": {
+      "thrust_each_15N": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 1.067412457495396,
+        "max_motor_translation_mm": 0.010360260496162944,
+        "max_motor_rotation_deg": 0.00775148025242802
+      },
+      "differential_thrust_15N": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 1.067412457495396,
+        "max_motor_translation_mm": 0.010360260496162944,
+        "max_motor_rotation_deg": 0.00775148025242802
+      },
+      "lateral_each_3N": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 7.476591981652946,
+        "max_motor_translation_mm": 0.28085899755147425,
+        "max_motor_rotation_deg": 0.24026170182140894
+      },
+      "motor_torque_150Nmm": {
+        "beam_extreme_fiber_stress_MPa_no_hole_concentration": 3.161698627242867,
+        "max_motor_translation_mm": 0.17300451876469125,
+        "max_motor_rotation_deg": 0.25094482564266407
+      }
+    }
+  },
+  "section_out_of_plane_EI_ratio_8x4_vs_6x3": 3.1604938271604937,
+  "bolt_group_polar_sum_mm2_old": 98,
+  "bolt_group_polar_sum_mm2_new": 884,
+  "cantilever_closed_form_self_check": "passed"
+}

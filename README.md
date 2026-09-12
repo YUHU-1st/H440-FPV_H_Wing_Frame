@@ -1,5 +1,7 @@
 # H440 FPV H-Wing Tailsitter / H形尾座式垂起固定翼
 
+> **B2 structural revision / B2 结构修订：** [开放电池托板、中央榫槽连接及加强机臂 / Open battery tray, bonded mortises and reinforced pylons](H440_B2/README.md). B2 STEP/DXF and comparative stiffness screening are available; native SolidWorks save/reopen is pending. B2 的 STEP/DXF 和刚度比较已生成，原生 SolidWorks 保存复核尚未完成。下方 B1 内容保留为历史制造档案。
+
 [中文说明](docs/README_zh-CN.md) · [English](docs/README_en.md) · [B1 validation / B1 复核](H440_B1/PR1复核报告.md) · [BOM](H440_B1/BOM与重量预算.md)
 
 ![H440 B1 isometric view](H440_B1/H440_B1_isometric.png)

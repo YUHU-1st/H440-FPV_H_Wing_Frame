@@ -1,0 +1,11 @@
+{
+  "master_parts": 27,
+  "assembly_instances": 35,
+  "printed_angle_instances": 0,
+  "battery_cage_removed_max_side_y_mm": 22,
+  "pylon_thickness_mm": 4,
+  "mortise_tongue_pairs_checked": 8,
+  "motor_clamp_holes_per_motor": 4,
+  "nominal_clevis_slot_mm": 4.15,
+  "frame_solid_interferences": 0
+}
