@@ -18,8 +18,8 @@ This revision removes the battery cage and eight printed center-frame angles. In
 - [SolidWorks 原生保存/重开报告 / Native save/reopen report](solidworks_native_report.json)
 - [结构复核与装配要求 / Structural screening and assembly notes](结构复核与装配要求.md)
 - [BOM 与重量预算](BOM与重量预算.md)
-- **B2 SolidWorks 原生交付已完成验证。** 27 种原生零件均在 SolidWorks 2024 SP0.1 中静默重开通过；总装包含 35 个生成实例，重开错误为 0，所有组件引用均落在 `H440_B2/` 交付目录内。STEP 导入在本机表现为扁平化 35 零件树，脚本同时兼容带根包装总成的导入形态。
-- **B2 native SolidWorks delivery is verified.** All 27 native part files reopen in SolidWorks 2024 SP0.1. The assembly contains 35 generated instances, reopens with zero load errors, and every component reference resolves inside the `H440_B2/` delivery directory. The local STEP import resolves as a flattened 35-part tree; the delivery script also supports a wrapper-subassembly import shape.
+- **B2 SolidWorks 原生交付已完成验证。** 27 种原生零件均在 SolidWorks 2024 SP0.1 中静默重开通过；总装包含 35 个生成实例，重开错误为 0，所有组件引用均落在 `H440_B2/` 交付目录内。重建并保存后已消除内部 ID 不匹配警告，复开仍返回“需要重建”警告码 32；制造前应在接收方 SolidWorks 环境中执行一次强制重建并另存。STEP 导入在本机表现为扁平化 35 零件树，脚本同时兼容带根包装总成的导入形态。
+- **B2 native SolidWorks delivery is verified.** All 27 native part files reopen in SolidWorks 2024 SP0.1. The assembly contains 35 generated instances, reopens with zero load errors, and every component reference resolves inside the `H440_B2/` delivery directory. Rebuild/save cleared the internal-ID mismatch warning; reopening still returns the `NeedsRegen` warning bit 32, so force-rebuild and save once in the recipient's SolidWorks environment before manufacturing. The local STEP import resolves as a flattened 35-part tree; the delivery script also supports a wrapper-subassembly import shape.
 
 ![B2 front](H440_B2_front.png)
 

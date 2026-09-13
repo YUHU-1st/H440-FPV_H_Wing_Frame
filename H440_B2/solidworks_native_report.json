@@ -277,12 +277,21 @@
   "assembly": {
     "step": "H440_B2_FRAME.step",
     "sldasm": "H440_B2_FRAME.SLDASM",
-    "size_bytes": 1103723,
+    "size_bytes": 1103113,
     "backup": "H440_B2_FRAME.pre_native.SLDASM",
     "import_errors": 0,
     "save_result": 0,
     "reopen_errors": 0,
-    "reopen_warnings": 33,
+    "reopen_warnings": 32,
+    "reopen_warning_flags": [
+      "swFileLoadWarning_NeedsRegen"
+    ],
+    "post_rebuild_verification": {
+      "reopen_errors": 0,
+      "reopen_warnings": 32,
+      "component_count": 35,
+      "missing_component_references": 0
+    },
     "component_count_including_root_wrapper": 35,
     "generated_instance_count": 35,
     "persistent_leaf_count": 35,
