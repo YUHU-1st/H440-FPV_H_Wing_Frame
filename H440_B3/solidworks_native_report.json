@@ -1,0 +1,583 @@
+{
+  "generated_at": "2026-09-13T12:17:46",
+  "solidworks_revision": "32.0.1",
+  "component_sldprt_count": 28,
+  "parts": [
+    {
+      "step": "C01_center_side_R_2mm.step",
+      "sldprt": "C01_center_side_R_2mm.SLDPRT",
+      "size_bytes": 121630,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 7102.841981075157,
+      "expected_volume_mm3": 7102.842
+    },
+    {
+      "step": "C02_center_side_L_2mm.step",
+      "sldprt": "C02_center_side_L_2mm.SLDPRT",
+      "size_bytes": 121894,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 7102.841981075158,
+      "expected_volume_mm3": 7102.842
+    },
+    {
+      "step": "C03_battery_floor_2mm.step",
+      "sldprt": "C03_battery_floor_2mm.SLDPRT",
+      "size_bytes": 87703,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 14088.376112004828,
+      "expected_volume_mm3": 14088.376
+    },
+    {
+      "step": "C04_electronics_floor_2mm.step",
+      "sldprt": "C04_electronics_floor_2mm.SLDPRT",
+      "size_bytes": 104944,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 12651.414916404923,
+      "expected_volume_mm3": 12651.415
+    },
+    {
+      "step": "C05_pylon_R_4mm.step",
+      "sldprt": "C05_pylon_R_4mm.SLDPRT",
+      "size_bytes": 119626,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 41420.476581388924,
+      "expected_volume_mm3": 41420.477
+    },
+    {
+      "step": "C06_pylon_L_4mm.step",
+      "sldprt": "C06_pylon_L_4mm.SLDPRT",
+      "size_bytes": 118728,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 41420.476581384035,
+      "expected_volume_mm3": 41420.477
+    },
+    {
+      "step": "C07_motor_plate_4mm.step",
+      "sldprt": "C07_motor_plate_4mm.SLDPRT",
+      "size_bytes": 80213,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 4608.093841984474,
+      "expected_volume_mm3": 4608.094
+    },
+    {
+      "step": "P02_main_collar.step",
+      "sldprt": "P02_main_collar.SLDPRT",
+      "size_bytes": 63500,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 4262.544328317166,
+      "expected_volume_mm3": 4262.544
+    },
+    {
+      "step": "P03_rear_collar.step",
+      "sldprt": "P03_rear_collar.SLDPRT",
+      "size_bytes": 62229,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 4888.349584912255,
+      "expected_volume_mm3": 4888.35
+    },
+    {
+      "step": "P04_motor_clevis.step",
+      "sldprt": "P04_motor_clevis.SLDPRT",
+      "size_bytes": 130768,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 12276.386866371855,
+      "expected_volume_mm3": 12276.28
+    },
+    {
+      "step": "P05_tail_shoe.step",
+      "sldprt": "P05_tail_shoe.SLDPRT",
+      "size_bytes": 52957,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 1706.3999999999994,
+      "expected_volume_mm3": 1706.4
+    },
+    {
+      "step": "P06L_O4Pro_camera_side.step",
+      "sldprt": "P06L_O4Pro_camera_side.SLDPRT",
+      "size_bytes": 71125,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 7250.969964238371,
+      "expected_volume_mm3": 7250.97
+    },
+    {
+      "step": "P06R_O4Pro_camera_side.step",
+      "sldprt": "P06R_O4Pro_camera_side.SLDPRT",
+      "size_bytes": 75417,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 7250.969964238371,
+      "expected_volume_mm3": 7250.97
+    },
+    {
+      "step": "P07_O4Pro_adapter.step",
+      "sldprt": "P07_O4Pro_adapter.SLDPRT",
+      "size_bytes": 66867,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 3511.353993088828,
+      "expected_volume_mm3": 3511.354
+    },
+    {
+      "step": "P08_O4_adapter.step",
+      "sldprt": "P08_O4_adapter.SLDPRT",
+      "size_bytes": 68183,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 3492.1274460488576,
+      "expected_volume_mm3": 3492.127
+    },
+    {
+      "step": "P09_analog_adapter.step",
+      "sldprt": "P09_analog_adapter.SLDPRT",
+      "size_bytes": 67380,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 3511.353993088828,
+      "expected_volume_mm3": 3511.354
+    },
+    {
+      "step": "P10_gimbal_dock.step",
+      "sldprt": "P10_gimbal_dock.SLDPRT",
+      "size_bytes": 60524,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 7443.175230479652,
+      "expected_volume_mm3": 7443.175
+    },
+    {
+      "step": "P11_O4_camera_insert.step",
+      "sldprt": "P11_O4_camera_insert.SLDPRT",
+      "size_bytes": 57028,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 2649.6,
+      "expected_volume_mm3": 2649.6
+    },
+    {
+      "step": "P12_analog_camera_insert.step",
+      "sldprt": "P12_analog_camera_insert.SLDPRT",
+      "size_bytes": 57823,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 1849.6000000000001,
+      "expected_volume_mm3": 1849.6
+    },
+    {
+      "step": "P13_camera20_insert.step",
+      "sldprt": "P13_camera20_insert.SLDPRT",
+      "size_bytes": 56513,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 1689.6,
+      "expected_volume_mm3": 1689.6
+    },
+    {
+      "step": "P14_camera_cradle_legacy.step",
+      "sldprt": "P14_camera_cradle_legacy.SLDPRT",
+      "size_bytes": 70711,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 8433.524783386754,
+      "expected_volume_mm3": 8433.525
+    },
+    {
+      "step": "T01_main_10x8_L420.step",
+      "sldprt": "T01_main_10x8_L420.SLDPRT",
+      "size_bytes": 55983,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 11875.220230569415,
+      "expected_volume_mm3": 11875.22
+    },
+    {
+      "step": "T02_rear_6x4_L420.step",
+      "sldprt": "T02_rear_6x4_L420.SLDPRT",
+      "size_bytes": 54648,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 6597.344572538564,
+      "expected_volume_mm3": 6597.345
+    },
+    {
+      "step": "T03_center_spacer_6x3p3_L62.step",
+      "sldprt": "T03_center_spacer_6x3p3_L62.SLDPRT",
+      "size_bytes": 60227,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 1222.7235687404154,
+      "expected_volume_mm3": 1222.724
+    },
+    {
+      "step": "W01_inner_R.step",
+      "sldprt": "W01_inner_R.SLDPRT",
+      "size_bytes": 537153,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 28294.34413950793,
+      "expected_volume_mm3": 28294.344
+    },
+    {
+      "step": "W02_outer_R.step",
+      "sldprt": "W02_outer_R.SLDPRT",
+      "size_bytes": 410557,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 19905.186667454607,
+      "expected_volume_mm3": 19905.187
+    },
+    {
+      "step": "W03_inner_L.step",
+      "sldprt": "W03_inner_L.SLDPRT",
+      "size_bytes": 544105,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 28294.344139487173,
+      "expected_volume_mm3": 28294.344
+    },
+    {
+      "step": "W04_outer_L.step",
+      "sldprt": "W04_outer_L.SLDPRT",
+      "size_bytes": 408001,
+      "import_errors": null,
+      "save_result": null,
+      "reopen_errors": 0,
+      "reopen_warnings": 0,
+      "reused_existing_native": true,
+      "solid_body_count": 1,
+      "native_volume_mm3": 19905.186667450915,
+      "expected_volume_mm3": 19905.187
+    }
+  ],
+  "assembly": {
+    "step": "H440_B3_FRAME.step",
+    "sldasm": "H440_B3_FRAME.SLDASM",
+    "size_bytes": 1134974,
+    "backup": "H440_B3_FRAME.pre_native.SLDASM",
+    "import_errors": 0,
+    "save_result": 0,
+    "reopen_errors": 0,
+    "reopen_warnings": 32,
+    "component_count_including_root_wrapper": 39,
+    "generated_instance_count": 39,
+    "persistent_leaf_count": 39,
+    "import_tree_mode": "flattened",
+    "persistent_root_subassembly": null,
+    "component_references": [
+      {
+        "name": "Central_L-1",
+        "path": "SolidWorks_Assembly_Parts/Central_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Center_spacer_12_-20-1",
+        "path": "SolidWorks_Assembly_Parts/Center_spacer_12_-20.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Battery_floor-1",
+        "path": "SolidWorks_Assembly_Parts/Battery_floor.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Center_spacer_12_-122-1",
+        "path": "SolidWorks_Assembly_Parts/Center_spacer_12_-122.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Central_R-1",
+        "path": "SolidWorks_Assembly_Parts/Central_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Electronics_floor-1",
+        "path": "SolidWorks_Assembly_Parts/Electronics_floor.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P03_rear_collar_pylon_R-1",
+        "path": "SolidWorks_Assembly_Parts/P03_rear_collar_pylon_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Pylon_R-1",
+        "path": "SolidWorks_Assembly_Parts/Pylon_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P02_main_collar_pylon_L-1",
+        "path": "SolidWorks_Assembly_Parts/P02_main_collar_pylon_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P02_main_collar_pylon_R-1",
+        "path": "SolidWorks_Assembly_Parts/P02_main_collar_pylon_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P02_main_collar_center_L-1",
+        "path": "SolidWorks_Assembly_Parts/P02_main_collar_center_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Center_spacer_-12_-20-1",
+        "path": "SolidWorks_Assembly_Parts/Center_spacer_-12_-20.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P03_rear_collar_center_L-1",
+        "path": "SolidWorks_Assembly_Parts/P03_rear_collar_center_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Center_spacer_-12_-122-1",
+        "path": "SolidWorks_Assembly_Parts/Center_spacer_-12_-122.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "T01_main_10x8_L420-1",
+        "path": "T01_main_10x8_L420.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P02_main_collar_center_R-1",
+        "path": "SolidWorks_Assembly_Parts/P02_main_collar_center_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P03_rear_collar_center_R-1",
+        "path": "SolidWorks_Assembly_Parts/P03_rear_collar_center_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "T02_rear_6x4_L420-1",
+        "path": "T02_rear_6x4_L420.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P03_rear_collar_pylon_L-1",
+        "path": "SolidWorks_Assembly_Parts/P03_rear_collar_pylon_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Shoe_-145_-83-1",
+        "path": "SolidWorks_Assembly_Parts/Shoe_-145_-83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Shoe_-145_83-1",
+        "path": "SolidWorks_Assembly_Parts/Shoe_-145_83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Pylon_L-1",
+        "path": "SolidWorks_Assembly_Parts/Pylon_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_plate_-145_78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_plate_-145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_plate_145_-78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_plate_145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_plate_-145_-78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_plate_-145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_clevis_-145_-78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_clevis_-145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_clevis_145_-78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_clevis_145_-78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_clevis_-145_78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_clevis_-145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_plate_145_78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_plate_145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Motor_clevis_145_78-1",
+        "path": "SolidWorks_Assembly_Parts/Motor_clevis_145_78.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "O4Pro_camera_side_R-1",
+        "path": "SolidWorks_Assembly_Parts/O4Pro_camera_side_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "O4Pro_camera_side_L-1",
+        "path": "SolidWorks_Assembly_Parts/O4Pro_camera_side_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Shoe_145_-83-1",
+        "path": "SolidWorks_Assembly_Parts/Shoe_145_-83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "Shoe_145_83-1",
+        "path": "SolidWorks_Assembly_Parts/Shoe_145_83.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "W02_outer_R-1",
+        "path": "W02_outer_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "W03_inner_L-1",
+        "path": "W03_inner_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "W01_inner_R-1",
+        "path": "W01_inner_R.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "W04_outer_L-1",
+        "path": "W04_outer_L.SLDPRT",
+        "doc_type": 1
+      },
+      {
+        "name": "P07_O4Pro_adapter-1",
+        "path": "P07_O4Pro_adapter.SLDPRT",
+        "doc_type": 1
+      }
+    ]
+  }
+}

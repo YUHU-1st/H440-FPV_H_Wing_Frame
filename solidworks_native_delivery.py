@@ -1,4 +1,4 @@
-"""Create and verify native SolidWorks delivery files from H440 B1/B2 STEP masters.
+"""Create and verify native SolidWorks delivery files from H440 B1/B2/B3 STEP masters.
 
 This deliberately uses late-bound IDispatch calls. The local SolidWorks 2024
 installation can run normally but PowerShell/.NET type-library binding raises
@@ -6,7 +6,7 @@ TYPE_E_ELEMENTNOTFOUND, while raw IDispatch is healthy.
 
 Before running, select valid default part/assembly templates and turn off
 3D Interconnect. The local 2024 SP0.1 associated STEP import stalls in LoadFile4;
-direct solid import succeeds. Run with H440_B2 to target the B2 delivery folder.
+direct solid import succeeds. Pass H440_B2 or H440_B3 to select that revision.
 """
 from __future__ import annotations
 
@@ -20,8 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 REVISION = sys.argv[1] if len(sys.argv) > 1 else "H440_B1"
-if REVISION not in ("H440_B1", "H440_B2"):
-    raise SystemExit("Expected H440_B1 or H440_B2")
+if REVISION not in ("H440_B1", "H440_B2", "H440_B3"):
+    raise SystemExit("Expected H440_B1, H440_B2 or H440_B3")
 B1 = ROOT / REVISION
 PERSIST_DIR = B1 / "SolidWorks_Assembly_Parts"
 DEPS = ROOT / ".cad-deps"
@@ -139,6 +139,12 @@ def verify_native_part(sw, step: Path):
         )
     verify = dispatch(reopened, "ModelDoc2")
     reopened_path = verify.GetPathName
+    expected = json.loads((B1 / "geometry_report.json").read_text(encoding="utf-8"))["parts"][step.stem]["volume_mm3"]
+    bodies = list(verify.GetBodies2(0, False) or [])
+    native_volume = sum(float(dispatch(body, "Body2").GetMassProperties(1.0)[3]) * 1e9 for body in bodies)
+    if len(bodies) != 1 or abs(native_volume - expected) > max(.02, expected * .0001):
+        sw.CloseDoc(verify.GetTitle)
+        raise RuntimeError(f"Native geometry mismatch: {out.name}; bodies={len(bodies)}, volume={native_volume}, expected={expected}")
     sw.CloseDoc(verify.GetTitle)
     if Path(reopened_path).resolve() != out.resolve():
         raise RuntimeError(f"Existing native reopen path mismatch: {out.name}: {reopened_path}")
@@ -151,6 +157,9 @@ def verify_native_part(sw, step: Path):
         "reopen_errors": errors.value,
         "reopen_warnings": warnings.value,
         "reused_existing_native": True,
+        "solid_body_count": len(bodies),
+        "native_volume_mm3": native_volume,
+        "expected_volume_mm3": expected,
     }
 
 
@@ -351,6 +360,16 @@ def save_and_verify_frame_assembly(sw):
             raise RuntimeError("Root imported subassembly path changed after native reopen")
 
     verify_model.ForceRebuild3(False)
+    save_errors = byref_i4()
+    save_warnings = byref_i4()
+    if not verify_model.Save3(SW_SAVE_SILENT, save_errors, save_warnings) or save_errors.value:
+        raise RuntimeError(f"Rebuilt assembly save failed: {save_errors.value}")
+    close_all(sw)
+    errors = byref_i4()
+    warnings = byref_i4()
+    final_model = sw.OpenDoc6(str(frame_native), SW_DOC_ASSEMBLY, SW_OPEN_SILENT, "", errors, warnings)
+    if not final_model or errors.value or (warnings.value & ~32):
+        raise RuntimeError(f"Final assembly reopen failed: errors={errors.value}; warnings={warnings.value}")
     close_all(sw)
     return {
         "step": frame_step.name,

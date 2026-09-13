@@ -1,0 +1,16 @@
+{
+  "tie_bolt_clear_paths": 4,
+  "TPU_crush_sleeve_positions": 8,
+  "deck_shoulder_stop_tests_at_plus_minus_0p1mm": 4,
+  "camera_M2_head_sweep_samples": 19,
+  "camera_M2_head_step_deg": 5,
+  "camera_M2_head_collision_count": 0,
+  "frame_solid_interferences": 0,
+  "masters": 28,
+  "TPU_side_wall_mm": 5,
+  "central_inner_width_mm": 62,
+  "metal_spacer_pitch_yz_mm": [
+    24,
+    102
+  ]
+}

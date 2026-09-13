@@ -1,5 +1,7 @@
 # H440 FPV H-Wing Tailsitter / H形尾座式垂起固定翼
 
+> **B3：** [中框双向机械限位与 TPU 双端相机支撑 / Positively retained center decks and dual-ended TPU camera supports](H440_B3/README.md)。增加托板止挡肩、四根金属隔柱和上下相机固定点；机架预算约 659 g。28 种主零件、39 个装配实例，含更新的 STEP、碳板 DXF、SolidWorks 原生文件及双语说明。
+
 > **B2 structural revision / B2 结构修订：** [开放电池托板、中央榫槽连接及加强机臂 / Open battery tray, bonded mortises and reinforced pylons](H440_B2/README.md). B2 STEP/DXF, comparative stiffness screening, and native SolidWorks save/reopen validation are complete. B2 的 STEP/DXF、刚度比较和 SolidWorks 原生保存/重开复核均已完成。下方 B1 内容保留为历史制造档案。
 
 [中文说明](docs/README_zh-CN.md) · [English](docs/README_en.md) · [B1 validation / B1 复核](H440_B1/PR1复核报告.md) · [BOM](H440_B1/BOM与重量预算.md)
